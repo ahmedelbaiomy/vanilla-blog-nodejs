@@ -1,0 +1,69 @@
+<%- include('parts/header') %>
+
+<%- include('parts/navbar') %>
+
+<% if(isLogged){%>
+    <form class="d-flex" action="/posts/new" method="GET" id="to-top">
+        <input type="submit" class="btn btn-success" value="Create New Post" id="createbutton">
+      </form>
+<% } %>
+
+<div class="container mt-3 py-5 ">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12 ">
+            <%  if(posts.length > 0){%>
+                <% posts.forEach(post =>{ %>
+                    <div class="card mb-5 profile-div">
+                        <div class="row no-gutters">
+                            <div class="col-md-4 d-flex align-items-center justify-content-center">
+                                <img src="<%= post.photo%>" class="card-img img-fluid mainImg" alt="blog image" width="100%" height="100%">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body mx-2 ">
+                                    <h4 class="card-title text-center" style="float: left;display: block;color: black;font-weight: bold;"><%= post.title %></h4>
+                                    <br>
+                                    <br>
+                                    <p class="card-text" style="color: #343a40;"><%= post.content %></p>
+                                    <div class="row  m-2 py-2">
+                                        <div class=" col-2 ">
+                                            <img src="images/profile.png" class="card-img img-fluid h-100" alt="blog image">
+                                        </div>
+                                        <div class=" col-10 mt-2 ">
+                                            <p class="text-muted"><%= post.createdAt %></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form  class="d-inline" action="/posts/<%=post._id%>?_method=DELETE" method="POST">
+                                    <a href="posts/edit/<%=post._id%>" class="btn btn-info" id="edit-btn"> Edit</a>
+                                    <button type="submit" class="btn btn-danger" >Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="row mb-5">
+                        <div class="row no-gutters">
+                            <div class="col-6">
+                                <img class="text-center rounded" src="<%=post.photo%>" alt="Card image cap" width="100%" height="250px">
+                            </div>
+                            <div class="col-6 card mt-5" style="border:none !important;">
+                                <h4 class="card-title"><%= post.title %></h4>
+                                <p class="card-text"><%= post.content %></p>
+                                <p class="text-muted"><%= post.createdAt %></p>
+                                <form  class="d-inline" action="/posts/<%=post._id%>?_method=DELETE" method="POST">
+                                    <a href="posts/edit/<%=post._id%>" class="btn btn-info"> Edit</a>
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div> -->
+                <%})%>
+            <% } else { %> 
+        </div>
+    </div>   
+    <h3 class="text-center alert alert-danger" > Posts Not Found To Display </h3>  <% } %>
+</div>
+
+
+ 
+ 
+<%- include('parts/footer') %>

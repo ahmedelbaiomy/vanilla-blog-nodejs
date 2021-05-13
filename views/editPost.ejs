@@ -1,0 +1,48 @@
+<%- include('parts/header') %>
+<%- include('parts/navbar') %>
+
+<header class="masthead mt-5 text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Update Post</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <form action="/posts/<%=post._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Title</label>
+              <input type="text" name="title" placeholder="Title" class="form-control" value="<%= post.title %>">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Image</label>
+              <input type="file" name="photo" class="form-control" accept="image/x-png,image/gif,image/jpeg,image/jpg" value="<%= post.photo %>"/>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Content</label>
+              <textarea name="content" placeholder="Content ..." cols="30" rows="10" class="form-control"><%= post.content %></textarea>
+            </div>
+          </div>
+          <div class="form-group my-4 text-center">
+            <button class="btn btn-primary">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<%- include('parts/footer') %>

@@ -1,0 +1,245 @@
+
+body {
+  background: lightgray;
+  font-size: 16px;
+  line-height: 1.66em;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  color:rgb(255, 255, 255);
+  box-shadow: none;
+  
+}
+
+/*-------------------------------------------------------*/
+
+#to-top{
+display: block;
+  color: #ffc710;
+  margin-left: 43%;
+  margin-top: 6%;
+  cursor: pointer;
+  font-size: 1.5em;
+  text-decoration:none;
+}
+
+/*-------------------------------------------------------*/
+
+input,textarea:focus
+{
+box-shadow: none !important;
+}
+
+#heading{
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 15px;
+}
+
+/*--------------------------------------------------*/
+.navbar-toggler{
+width: 47px;
+height: 34px;
+background-color: transparent;
+border:none;
+}
+.navbar-toggler .line{
+width: 100%;
+float: left;
+height: 2px;
+background-color: #FFF;
+margin-bottom: 5px;
+}
+/*--------------------------------------------------*/
+
+
+#reg .register
+{
+  margin-top: 90px;
+  margin-bottom: 80px;
+}
+
+#reg .form-control
+{
+  box-shadow: none;
+  
+}
+
+#reg button
+{
+font-size: large !important;
+background-color:  #ffc710 !important;
+color: rgb(0, 0, 0) !important;
+padding: 10px ;
+border-radius: 5px !important;
+
+}
+
+
+/*--------------------------------------------------*/
+h2
+{
+  text-transform: uppercase;
+  font-size: 27px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ff0b0b;
+}
+/*------------------------------------------------*/
+/*---------------------for login page---------------------------*/
+.ask
+{
+color: #000;
+}
+.ask a
+{
+color: #76ff06;
+font-weight: 600;
+font-size: 16px;
+}
+/*------------------------------------------------*/
+/*-----------------------nav-------------------------*/
+nav
+{
+
+font-weight: 600;
+background-color: rgb(255, 255, 255);
+color: #ffc710;
+}
+nav a
+{
+color: #ffc710 !important;
+}
+.search,.logout
+{
+background-color:  #fa0000 !important;
+color: #FFF !important; 
+}
+
+/*----------------blog---------------------------*/
+#blog , #profile
+{
+margin-top: 30px;
+margin-bottom: 40px;
+}
+#blog h4 ,h5
+{
+font-weight: 600;
+color: #ffc710;
+}
+
+#blog h4
+{
+float: left;
+}
+
+#blog h5
+{
+font-size: 14px;
+}
+#blog .mainImg
+{
+height: 85%;
+width: 85% !important;
+
+}
+#blog button
+{
+font-size: large !important;
+background-color:  #ffc710 !important;
+color: #FFF !important;
+padding: 10px;
+border-radius: 5px !important;
+
+}
+/*------------------------------------------------*/
+/*--------------------profile---------------------*/
+#profile .profileImg
+{
+width: 15%;
+height: 15%;
+}
+
+#profile span
+{
+font-size: small;
+color: #000;
+}
+#profile .content p
+{
+display: inline;
+font-size: medium;
+color: #ffc710;
+font-weight: 700;
+font-size: 17px;
+margin-right: 10px;
+}
+#profile h4
+{
+font-weight: 700;
+color: #ffc710;
+}
+#profile button
+{
+font-size: 15px; 
+color: #FFF !important;
+border-radius: 5px !important;
+}
+
+/*---------------------------------------------------------*/
+
+#plusBtn
+{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 10;
+  background-color: #FFF;
+  
+}
+/*---------------------------------------------------------*/
+
+@media (max-width :991px)
+{ 
+body
+  {
+    font-size: 12px !important;
+    
+  }  
+ 
+}
+/*--------------------------------------------------*/
+
+#loginbtn{
+  background-color: #ffc710;
+  color: #343a40;
+}
+
+#loginbtn-nav{
+  background-color: #ffc710;
+  color: #343a40;
+  justify-content: center;
+  justify-items: baseline;
+}
+
+#regbtn-nav{
+  /* background-color: ; */
+  color: #343a40;
+}
+
+#edit-btn{
+  margin-left: 8%;
+}
+
+.profile-div{
+  padding: 3%;
+}
+
+label{
+  color :#000;
+  margin-left: 25%;
+}
+
+input[type=text],input[type=email],input[type=password]{
+  width: 50%;
+  margin-left: 25%;
+}

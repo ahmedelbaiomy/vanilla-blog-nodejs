@@ -1,0 +1,43 @@
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   
+    <div class="container-md">
+      <a class="navbar-brand" href="/posts">V A N I L L A</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar-togglerDemo02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/posts">HOME</a>
+          </li>
+
+          <% if(isLogged){%>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">PROFILE</a>
+            </li>
+          <% } %>  
+    
+            <li class="nav-item">
+                <a class="nav-link" href="/following">WHAT FOLLOWER SAY!</a>
+            </li>
+
+        </ul>
+        <% if(!isLogged){%>
+          <form  class="m-2" action="/auth/register" method="GET">
+            <input type="submit" value="Register" id="regbtn-nav" class="btn btn-primary">
+          </form>
+        <% }%>
+
+        <% if(!isLogged){%>
+          <form  class="m-2" action="/auth/login" method="GET">
+            <input type="submit" value="Login" id="loginbtn-nav" class="btn btn-primary">
+          </form>
+        <% }%>
+
+
+        <% if(isLogged){%>
+          <form  class="m-2" action="/auth/logout" method="POST">
+            <input type="submit" value="logout" class="btn logout">
+          </form>
+        <% }%>
+    </div>
+</nav>

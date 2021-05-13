@@ -1,0 +1,90 @@
+<%- include('parts/header') %>
+<%- include('parts/navbar') %>
+
+<!-- Page Header -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+        <% if(authError){ %>
+          <br>
+            <p class="alert alert-danger">
+                <%= authError %>
+            </p>
+        <% } %>
+
+      <form action="/auth/register" method="POST">
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Firstname</label>
+            <input type="text" name="firstname" placeholder="Firstname" class="form-control">
+             <!-- Error message for firstname-->
+          </div>
+          <% let firstnameError = validationErrors.find(err => err.param === 'firstname') %>
+          <% if(firstnameError) {%>
+                <p class="alert alert-danger mt-2">
+                    <%= firstnameError.msg %>
+                </p> 
+          <% } %>
+        </div>
+
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Lastname</label>
+            <input type="text" name="lastname" placeholder="Lastname" class="form-control">
+             <!-- Error message for lastname-->
+          </div>
+          <% let lastnameError = validationErrors.find(err => err.param === 'lastname') %>
+          <% if(lastnameError) {%>
+                <p class="alert alert-danger mt-2">
+                    <%= lastnameError.msg %>
+                </p> 
+          <% } %>
+        </div>
+
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Email" class="form-control">
+                 <!-- Error message for email-->
+          </div>
+          <% let emailError = validationErrors.find(err => err.param === 'email') %>
+          <% if(emailError) {%>
+                <p class="alert alert-danger mt-2">
+                    <%= emailError.msg %>
+                </p> 
+          <% } %>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Password" class="form-control">
+          </div>
+            <!-- Error message for password-->
+          <% let passwordError = validationErrors.find(err => err.param === 'password') %>
+          <% if(passwordError) {%>
+                <p class="alert alert-danger mt-2">
+                    <%= passwordError.msg %>
+                </p> 
+          <% } %>
+        </div>
+      
+        <div class="form-group my-4 text-center">
+          <button class="btn btn-primary">Register </button>
+        </div>
+
+        <div style="text-align: center;">
+            <span style="color: black;text-align: center;"> Already have account ? </span><a href="/auth/login">Login</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  
+</div>
+
+<%- include('parts/footer') %>
+
+   
+
+
+
